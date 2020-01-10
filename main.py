@@ -1,5 +1,6 @@
 from pyexcel_ods import get_data
 import json
+import operator
 data = get_data("Data1.ods")
 dict1={}
 x=json.dumps(data)
@@ -116,23 +117,16 @@ for i in dict5:
 	zt=dict7[i]
 	total=xt+yt+zt
 	dict8[i]=round(total,2)
-
-dict9={}
-list1=[]
-for i in dict8:
-	tmp=dict8[i]
-	dict9[tmp]=i
-	list1.append(tmp)
-list1.sort()
-list1.reverse()
-list2=[]
+sort1=sorted(dict8.items(), key=operator.itemgetter(1))
+sort1.reverse()
 intvar=1
 print("")
 print("{:22}{:28}{}".format(prRed("Rank"),prRed("Name"),prRed("Overall Score(Includes 40% Academics, 30% IELTS and 30% Interview)")))
 print("")
-for i in list1:
-	xmain=dict9[i]
-	tmpstr="  {:18}{:58}{}".format(prPurple(str(intvar)),prYellow(xmain),prCyan(str(i)+" %"))
+for i in sort1:
+	xmain=i[0]
+	xnum=i[1]
+	tmpstr="  {:18}{:58}{}".format(prPurple(str(intvar)),prYellow(xmain),prCyan(str(xnum)+" %"))
 	print(tmpstr)
 	intvar+=1
 	print("")
