@@ -19,3 +19,7 @@ ___Line 99 for Interview___
 ___The code extracts the data from the given .ods format file, it reads and stores data in a dictionary. The code extracts the 
 required data and calcuate the average of all 4 terms. The average of IELTS result and interview is calculated seperately. After 
 that 40% of academics, 30% IELTS and 30% interview. The results are sorted in descending order and are pretty printed in the terminal___
+ 
+ ### Output
+ 
+ ![alt text](https://github.com/Ayush19-01/GCI-University-Data-Management/blob/master/Screenshot%20from%202020-01-10%2019-55-36.png)
